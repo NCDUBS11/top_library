@@ -1,0 +1,28 @@
+
+
+
+
+
+*{
+    line-height: 1.5;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
+    font-weight: 500;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    aspect-ratio: 2 / 1;
+    width: clamp(400px, 60vw, 800px);
+    border: 2px solid black;
+}
