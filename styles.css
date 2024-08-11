@@ -73,11 +73,12 @@ legend{
 }
 
 #inputArea{
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 label{
     padding-right: 0.5rem;
+    font-size: 1.25rem;
 }
 
 input{
@@ -88,8 +89,36 @@ input{
     padding-inline: 0.75rem;
 }
 
+#read{
+    aspect-ratio: 1 / 1;    
+    width: 1.5rem;
+    border: 2px solid black;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+
+#read:hover{
+    scale: 1.15;
+}
+
 #pages{
     width: 10ch;
+}
+
+button.submit{
+    padding: 0.25rem 1.5rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button.submit:hover{
+    scale: 1.1;
+}
+
+button.submit:active{
+    background-color: rgb(185, 185, 185);
+    scale: 0.9;
 }
 
 ul{
@@ -98,5 +127,12 @@ ul{
 }
 
 li{
-    padding-block: 1rem;
+    list-style: none;
+    font-size: 1.1rem;
+    
+}
+
+li:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -15,8 +15,8 @@
         </header>
         <sidebar>
             Existing Books
-            <ul>
-                book titles
+            <ul id="bookList">
+                
             </ul>
         </sidebar>
         <main>
@@ -28,8 +28,8 @@
                         <input type="text" id="title" name="title">
                     </div>
                     <div id="inputArea" class="author">
-                        <label for="name">Author's Surname:</label>
-                        <input type="text" id="name" name="name">
+                        <label for="surname">Author's Surname:</label>
+                        <input type="text" id="surname" name="surname">
                     </div>
                     <div id="inputArea" class="pages">
                         <label for="pages">Pages:</label>
@@ -40,7 +40,7 @@
                         <input type="checkbox" id="read" name="read">
                     </div>
                 </fieldset>
-                <button type="button">Submit</button>
+                <button class="submit" type="button" onclick="addBookToLibrary()">Submit</button>
             </form>
         </main>
     </div>
