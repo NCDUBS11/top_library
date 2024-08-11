@@ -10,8 +10,39 @@
 </head>
 <body>
     <div class="container">
-        <div id="book" class="add">book content area</div>
-        <div id="book" class="list">book list area</div>
+        <header>
+            Library Organizer
+        </header>
+        <sidebar>
+            Existing Books
+            <ul>
+                book titles
+            </ul>
+        </sidebar>
+        <main>
+            <form id="form">
+                <fieldset>
+                    <legend>Add a New Book</legend>
+                    <div id="inputArea" class="title">
+                        <label for="title">Book Title:</label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div id="inputArea" class="author">
+                        <label for="name">Author's Surname:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div id="inputArea" class="pages">
+                        <label for="pages">Pages:</label>
+                        <input type="number" id="pages" name="pages">
+                    </div>
+                    <div id="inputArea" class="read">
+                        <label for="read">Has been read:</label>
+                        <input type="checkbox" id="read" name="read">
+                    </div>
+                </fieldset>
+                <button type="button">Submit</button>
+            </form>
+        </main>
     </div>
 </body>
 </html>
