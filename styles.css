@@ -5,10 +5,9 @@
     --ff-regular: "Nanum Gothic";
     --ff-title: "Lora";
     --fc-regular: rgb(236, 236, 236);
-    --fs-small: 1rem;
-    --fs-regular: 1.5rem;
-    --fs-large: 2rem;
-    --fs-xlarge: 2.5rem;
+    --fs-regular: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+    --fs-large: clamp(2rem, 0.7rem + 3.75vw, 4rem);
+    --fs-xlarge: clamp(2.5rem, 0.8rem + 5vw, 5rem);
     --fw-regular: 400;
     --fw-bold: 700;
     --bg-color: rgba(170, 170, 170, 40%);
@@ -16,7 +15,6 @@
 }
 
 *{
-    line-height: 1.5rem;
     font-family: var(--ff-regular), 'Times New Roman', serif;    
     font-size: var(--fc-regular);
     font-weight: var(--fw-regular);
@@ -30,13 +28,13 @@
 
 body{
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: radial-gradient(rgba(0, 0, 0, 5%),rgba(0, 0, 0, 80%)) ,url("./library-bg-large.jpg");
     background-position: center;
     background-size: cover;
     backdrop-filter: blur(2px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 h1{
@@ -45,14 +43,34 @@ h1{
     font-weight: var(--fw-bold);
     margin: 0;
     padding: 0;
-
 }
 
-.greeting{
-    
-}
-
-.greeting > p{
+p{
     font-size: var(--fs-regular);
 }
+
+.subTitle{
+    opacity: 0;
+    animation:fadeIn 2s linear forwards;
+}
+
+.title{
+    opacity: 0;
+    animation:fadeIn 3s linear 1s forwards;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes fadeIn{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+
 
