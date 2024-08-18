@@ -6,11 +6,13 @@
     --ff-title: "Lora";
     --fc-regular: rgb(236, 236, 236);
     --fs-regular: clamp(1rem, 0.5rem + 2vw, 1.3rem);
-    --fs-large: clamp(1.5rem, 0.6rem + 3vw, 2.25rem);
-    --fs-xlarge: clamp(2.5rem, 0.8rem + 5vw, 5rem);
+    --fs-large: clamp(1.5rem, 0.6rem + 2.5vw, 1.75rem);    
+    --fs-xlarge: clamp(1.5rem, 0.6rem + 3vw, 2.25rem);
+    --fs-xxlarge: clamp(2.5rem, 0.8rem + 5vw, 5rem);
     --fw-regular: 400;
     --fw-bold: 700;
-    --bg-color: rgba(73, 73, 73, 0.6);
+    --bg-color: rgba(49, 49, 49, 0.5);
+    --bg-actColor:rgba(117, 116, 116, 0.5);
     --brdr-color: rgb(236, 236, 236);
 }
 
@@ -31,20 +33,23 @@ body{
     background-image: radial-gradient(rgba(0, 0, 0, 5%),rgba(0, 0, 0, 80%)) ,url("./library-bg-large.jpg");
     background-position: center;
     background-size: cover;
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(2px); */
     position: relative;
 }
 
 h1{
     font-family: var(--ff-title);
-    font-size: var(--fs-xlarge);
+    font-size: var(--fs-xxlarge);
     font-weight: var(--fw-bold);
     margin: 0;
     padding: 0;
+    text-shadow: 2px 2px 4px black;
 }
 
 .greeting > p{
-    font-size: var(--fs-large);
+    font-size: var(--fs-xlarge);
+    text-shadow: 2px 2px 4px black;
+
 }
 
 .greeting{
@@ -53,45 +58,100 @@ h1{
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    animation: introFlash 5s linear forwards;
+    animation: introFlash 4s ease-in forwards;
 }
 
 .container{
+    min-width: max-content;
     position: absolute;
     top: 50%;
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%);
-    animation: fadeIn 4s ease-in 5s forwards;
+    animation: fadeIn 1.5s ease-in 3s forwards;
     border: 1px solid var(--brdr-color);
     border-radius: 10px;
     background-color: var(--bg-color);
     padding: 1.5rem;
     box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.3),
     -2px -2px 10px 2px rgba(211, 211, 211, 0.2);
+    backdrop-filter: blur(5px);
 }
 
-form,
+form,label{
+    font-family:inherit;
+    text-shadow: 2px 2px 4px black;
+    color: inherit;
+}
+
 fieldset{
     display: grid;
     gap: 1rem;
+    margin-block-end: 1.5rem;
 }
 
 legend{
     margin-block-end: 1.25rem;
-    font-family: var(--ff-title);
-    font-size: var(--fs-large);
+    font-family: inherit;
+    font-size: var(--fs-xlarge);
     text-align: center;
     font-weight: var(--fw-bold);
 }
 
+label{
+    font-family:inherit;
+    text-shadow: 2px 2px 4px black;
+    color: inherit;
+}
+
 input{
-    padding: .25rem 1rem;
-    width: min(100%, 30ch)
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.form-control:has(.readStatus){
+    display:flex;
+    gap: 1rem;   
 }
 
 .form-control{
     font-size: var(--fs-regular);
+    display: grid;
+    row-gap: 0.3rem;
+}
+
+
+.readStatus{
+    width: var(--fs-regular);
+    accent-color: var(--bg-actColor);
+    box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 1.0),
+    -2px -2px 10px 2px rgba(211, 211, 211, 0.4);;
+}
+
+::placeholder{
+    font-size: var(--fs-regular);
+    color: rgb(78, 78, 78);
+}
+
+.submitBtn{
+    background-color: var(--bg-color);
+    border: 1px solid var(--brdr-color);
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.8),
+    -2px -2px 10px 2px rgba(211, 211, 211, 0.4);;
+    padding: 0.25rem 1rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.submitBtn:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.submitBtn:active{
+    scale:0.95;
+    background-color: var(--bg-actColor);
+    font-weight: 600;
 }
 
 
