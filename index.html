@@ -10,11 +10,38 @@
 </head>
 <body>
     <div id="greeting" class="greeting">
-        <p class="subTitle">Welcome to...</p>
-        <h1 class="title">The Library</h1>
+        <p>Welcome to...</p>
+        <h1>The Library</h1>
     </div>
     <div class="container">
-        
+        <form id="form" class="form">
+            <fieldset>
+                <legend>Add a Book</legend>
+                <div class="form-control">
+                    <label for="bookTitle">Book Title:</label>
+                    <input type="text" name="bookTitle" id="bookTitle" class="bookTitle"
+                    placeholder="The Call of the Wild" required />
+                </div>
+                <div class="form-control">
+                    <label for="surname">Author's Surname:</label>
+                    <input type="text" name="surname" id="surname" class="surname"
+                    placeholder="London" pattern="[A-Za-z]+" minlength="2"  required />
+                </div>
+                <div class="form-control">
+                    <label for="pages">Page Count:</label>
+                    <input type="number" name="pages" id="pages" class="pages"
+                    placeholder="100" pattern="[1-9]+" required />
+                </div>
+                <div class="form-control">
+                    <label for="readStatus">Has been read?:</label>
+                    <input type="checkbox" name="readStatus" id="readStatus" class="readStatus" />
+                </div>
+            </fieldset>
+            <div class="form-control">
+                <button id="submitBtn" class="submitBtn" type="submit">Submit</button>
+            </div>
+        </form>
+
     </div>
 </body>
 </html>
