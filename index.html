@@ -25,7 +25,7 @@
                 <div class="form-control">
                     <label for="surname">Author's Surname:</label>
                     <input type="text" name="surname" id="surname" class="surname"
-                    placeholder="London" pattern="[A-Za-z]+" minlength="2"  required />
+                    placeholder="London" pattern="[A-Za-z]+" minlength="2" title="Author surname only. No spaces."  required />
                 </div>
                 <div class="form-control">
                     <label for="pages">Page Count:</label>
@@ -38,7 +38,7 @@
                 </div>
             </fieldset>
             <div class="form-control">
-                <button id="submitBtn" class="submitBtn" type="submit">Submit</button>
+                <button id="submitBtn" class="submitBtn" type="button" onclick="addBookToLibrary()">Submit</button>
             </div>
         </form>
 
