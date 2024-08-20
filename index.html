@@ -13,6 +13,10 @@
         <p>Welcome to...</p>
         <h1>The Library</h1>
     </div>
+    <div id="icon" class="icon">
+        <img id="closedBookImg" src="./closed_book.svg" alt="Icon to switch over to book list">
+        <img id="openBookImg" src="./open_book.svg" alt="Icon to switch over to add book menu" style="display: none;">
+    </div>
     <div class="container">
         <form id="form" class="form">
             <fieldset>
@@ -41,7 +45,14 @@
                 <button id="submitBtn" class="submitBtn" type="button" onclick="addBookToLibrary()">Submit</button>
             </div>
         </form>
+        <div id="bookListArea" class="bookListArea" style="display: none;">
+            <h1 class="listTitle">My books</h1>
+            <div id="bookList" class="bookList">
+                <ul>
 
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>

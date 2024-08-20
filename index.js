@@ -1,9 +1,10 @@
 let form = document.getElementById("form");
-// const submitBtn = document.getElementById(submitBtn);
 let title = document.getElementById("bookTitle");
 let surname = document.getElementById("surname");
 let pages = document.getElementById("pages");
 let readStatus = document.getElementById("readStatus");
+const openBook = document.getElementById("openBookImg");
+const closedBook = document.getElementById("closedBookImg");
 
 const myLibrary = [];
 
