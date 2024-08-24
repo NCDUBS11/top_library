@@ -8,6 +8,12 @@ let surname = document.getElementById("surname");
 let pages = document.getElementById("pages");
 let readStatus = document.getElementById("readStatus");
 
+const surnameRegex = /^[a-zA-Z]+$/;
+
+const titleError = document.querySelector(".book p");
+const nameError = document.querySelector(".name p");
+const pageError = document.querySelector(".page p");
+
 const myLibrary = [];
 
 
@@ -18,31 +24,100 @@ function Book(title, surname, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
+
 function addBookToLibrary() {
 
 // errors include regex match checks
 // NAME pattern="[A-Za-z]+{2,}" minlength="2" title="Author surname only. No spaces."
 // PAGES pattern="[1-9]+"
 
-    title = title.value.trim();
-    surname = surname.value.trim();
-    pages = pages.value.trim();
-    readStatus = readStatus.checked;
+    checkTitle();
+    checkSurname();
+    checkPages();
 
-    const li = document.createElement("li");
-    li.setAttribute("id", `${surname}`);
-    li.setAttribute("class", `${title}`);
-    li.innerText = title;
-    
-    const book = new Book(title, surname, pages, readStatus);
-    myLibrary.push(book);
-    // bookList.appendChild(li);
-    
-    form.reset();
-    // listItems = document.querySelectorAll("li");
-    // listItems.forEach((item) => {
-    //     item.setAttribute("onclick", "dispInfo()")
-    // });
+    if(title.classList.contains("error") || surname.classList.contains("error") || pages.classList.contains("error")){
+        return;
+    }
+
+    else{
+        title = title.value.trim();
+        surname = surname.value.trim();
+        pages = pages.value.trim();
+        readStatus = readStatus.checked;
+
+        const li = document.createElement("li");
+        li.setAttribute("id", `${surname}`);
+        li.setAttribute("class", `${title}`);
+        li.innerText = title;
+        
+        const book = new Book(title, surname, pages, readStatus);
+        myLibrary.push(book);
+        // bookList.appendChild(li);
+        
+        form.reset();
+        // listItems = document.querySelectorAll("li");
+        // listItems.forEach((item) => {
+        //     item.setAttribute("onclick", "dispInfo()")
+        // });
+    }
+}
+
+function checkTitle(){
+
+    let cleanTitle = title.value.trim();
+
+    if(cleanTitle === ""){
+        titleError.innerText = "Field can't be empty";
+        titleError.style.display = "";
+        title.classList.add("error");
+        return;
+    }
+
+    else{
+        titleError.style.display = "none";
+        title.classList.remove("error");
+    }  
+}
+
+function checkSurname(){
+
+    let cleanSurname = surname.value.trim();
+
+    if(cleanSurname === ""){
+        nameError.innerText = "Field can't be empty";
+        nameError.style.display = "";
+        surname.classList.add("error");
+        return;
+    }
+
+    else if(!surnameRegex.test(cleanSurname)){
+        nameError.innerText = "Alphanumeric only.";
+        nameError.style.display = "";
+        surname.classList.add("error");
+        return;
+    }
+
+    else{
+        nameError.style.display = "none";
+        surname.classList.remove("error");
+    } 
+}
+
+function checkPages(){
+
+    let cleanPages = pages.value.trim();
+
+    if( cleanPages === ""){
+        pageError.innerText = "Field can't be empty";
+        pageError.style.display = "";
+        pages.classList.add("error");
+        return;
+    }
+
+    else{
+        pageError.style.display = "none";
+        pages.classList.remove("error");
+    }  
 }
 
 function changeMenu() {
