@@ -1,5 +1,5 @@
 const form = document.getElementById("form");
-const bookListArea = document.getElementById("bookListArea");
+const bookList = document.querySelector("#bookList ul");
 const openBook = document.getElementById("openBookImg");
 const closedBook = document.getElementById("closedBookImg");
 
@@ -27,10 +27,6 @@ function Book(title, surname, pages, readStatus) {
 
 function addBookToLibrary() {
 
-// errors include regex match checks
-// NAME pattern="[A-Za-z]+{2,}" minlength="2" title="Author surname only. No spaces."
-// PAGES pattern="[1-9]+"
-
     checkTitle();
     checkSurname();
     checkPages();
@@ -52,9 +48,12 @@ function addBookToLibrary() {
         
         const book = new Book(title, surname, pages, readStatus);
         myLibrary.push(book);
-        // bookList.appendChild(li);
+        bookList.appendChild(li);
         
         form.reset();
+
+        //**Additional feature to implement a "more info"-type pop-up when list item is clicked"
+
         // listItems = document.querySelectorAll("li");
         // listItems.forEach((item) => {
         //     item.setAttribute("onclick", "dispInfo()")

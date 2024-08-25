@@ -13,6 +13,7 @@
     --fw-regular: 400;
     --fw-bold: 700;
     --bg-color: rgba(49, 49, 49, 0.5);
+    --bg-color-dark: rgba(26, 25, 25, 0.5);
     --bg-actColor:rgba(117, 116, 116, 0.5);
     --brdr-color: rgb(236, 236, 236);
 }
@@ -156,7 +157,6 @@ input{
     row-gap: 0.3rem;
 }
 
-
 .readStatus{
     width: var(--fs-regular);
     accent-color: var(--bg-actColor);
@@ -195,7 +195,13 @@ input{
     font-weight: 600;
 }
 
-
+.bookList{
+    min-height: 100px;
+    border: 1px solid var(--brdr-color);
+    border-radius: 10px;
+    background-color: var(--bg-color-dark);
+    padding: 0.5rem;
+}
 
 
 
