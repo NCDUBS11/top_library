@@ -197,12 +197,27 @@ input{
 
 .bookList{
     min-height: 100px;
+    max-height: 70vh;
     border: 1px solid var(--brdr-color);
     border-radius: 10px;
     background-color: var(--bg-color-dark);
-    padding: 0.5rem;
+    padding: 0.7rem;
+    overflow-y: auto;
 }
 
+.bookList ul{
+    display: grid;
+    row-gap: 0.3rem;
+}
+
+.bookList li{
+    list-style: none;
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-regular);
+    color: var(--fc-regular);
+    max-width: 30ch;
+    word-wrap: normal;
+}
 
 
 @keyframes fadeIn{

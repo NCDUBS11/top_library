@@ -52,6 +52,11 @@ function addBookToLibrary() {
         
         form.reset();
 
+        title = document.getElementById("bookTitle");
+        surname = document.getElementById("surname");
+        pages = document.getElementById("pages");
+        readStatus = document.getElementById("readStatus");
+
         //**Additional feature to implement a "more info"-type pop-up when list item is clicked"
 
         // listItems = document.querySelectorAll("li");
